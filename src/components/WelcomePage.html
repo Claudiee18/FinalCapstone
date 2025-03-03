@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to PWC!</title>
+    <link rel="shortcut icon" href="circlelogo.jpg" type="image/x-icon">
+</head>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;   
+    font-family: Arial, sans-serif;
+}
+
+.overlay-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay-content   {
+    position: relative;
+    z-index: 2;
+    color: #0a0a0a;
+    text-align: center;
+    padding: 20px;
+    background: rgb(255, 255, 255); 
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1 {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.continue-button { background-color: #007BFF; 
+      color: white; 
+      border: none; 
+      border-radius: 25px; 
+      padding: 12px 20px; 
+      font-size: 16px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      transition: all 0.3s ease; 
+      margin-top: 20px;} 
+    
+
+.continue-button:hover { 
+        background-color: #0056b3;  
+        transform: translateY(-3px);
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    display: none; 
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 50px;    
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { 
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+}
+
+</style>
+
+<body>
+
+        <div class="overlay-container">
+            <img src="Philippine_Women's_College_Davao_(University_Avenue,_Matina,_Davao_City;_08-22-2023).jpg" alt="Campus Background" class="background-image">
+            <div class="overlay-content">
+                <h1>Welcome to the <br> PWC Campus Map</h1>
+                <p>Your guide to navigating the campus with ease.</p>
+                <p>Explore the map to locate buildings, offices, and other points of interest across the campus.</p>
+                <button onclick="startLoading()" class="continue-button"> Get Direction </button>
+                <a href="Guide.html">
+                <button onclick="Loading()" class="continue-button">Guide Overview</button>
+            </a>
+    </div>
+
+    <div id="loading-overlay">
+        <div class="spinner">
+        </div>
+    </div>
+
+    <script>
+        function startLoading() {
+            // This is the loading overlay
+            document.getElementById('loading-overlay').style.display = 'flex';
+
+            setTimeout(function() {
+                window.location.href = 'index.html'; 
+            }, 1000);
+        }
+        
+        function Loading() {  
+            
+            document.getElementById('loading-overlay').style.display = 'flex';
+
+            setTimeout(function() {
+                window.location.href = 'index.html'; // Will go to the Main page
+            }, 1000); // If how long the animation to be load
+        }
+
+
+    </script>
+
+
+</body>
+</html>

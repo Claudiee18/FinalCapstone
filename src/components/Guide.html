@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="circlelogo.jpg" type="image/x-icon">
+    <style>
+        /* Base body style */
+        body {
+            background-image: linear-gradient(to right, rgb(197, 20, 20) , rgb(124, 20, 20));
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;   
+        }
+
+        .MainContainer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;  
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Container for Step 1 and Step 2 */
+        .steps-container {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .step {
+            max-width: 45%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(211, 14, 14, 0.2);
+            text-align: center;
+            margin: 10px;
+            margin-right: 70px;
+           
+        }
+
+        .step2{
+            max-width: 45%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(211, 14, 14, 0.2);
+            text-align: center;
+            margin: 10px;
+            width: 300px;
+        }
+
+        /* Styling for the video container */
+        .video-container {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+            
+        }
+
+        /* Header styles */
+        #first {
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+
+        h1{
+            font-size: 35px;
+        }
+
+        h2, h3 {
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            
+        }
+
+        /* Text styling */
+        p {
+            color: #eaeaea;
+        }
+
+        /* Button styling */
+        .button-style {
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #8b1a1a;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-style:hover {
+            background-color: #a32929;
+        }
+
+        /* Link styling */
+        a {
+            color: #ffdddd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Footer style */
+        footer {
+            color: #f5f5f5;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        button { 
+          background-color: #007BFF; 
+          color: white; 
+          border: none; 
+          border-radius: 25px; 
+          padding: 12px 20px; 
+          font-size: 16px; 
+          font-weight: bold; 
+          cursor: pointer; 
+          transition: all 0.3s ease; 
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+          margin-top: 20px;
+        } 
+
+        button:hover { 
+          background-color: #0056b3; 
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); 
+          transform: translateY(-3px); 
+        }
+        
+    </style>
+    <title>Guide Overview</title>
+</head>
+<body>
+    <center>
+        <h1 id="first">Steps on How to Use The Campus Map</h1>
+    </center>
+    <div class="MainContainer">
+        <div class="steps-container">
+            <div class="step">
+                <h1>Step 1:</h1>
+                <h3>Specify your location and select your destionation.</h3>
+              
+                <img src="currentLocationandDestination.PNG" alt="" style="height: auto; width: 250px;"/>
+
+            </div>
+
+
+            <div class="step2" style="margin-left: -50px;">
+                <h1>Step 2:</h1>
+                <h3>Click set route to find your destination.</h3>
+                <img src="setroute.PNG" alt="Destinationlocation" style="height: auto; width: 200px;"/>
+                <h3>Click this to go back in home page.</h3>
+                <img src="backtomainpage.PNG" alt="backtomainpage" style="height: auto; width: 200px;">
+            </div>
+        </div>
+
+        <div class="video-container">
+            <h2>Watch the demonstration of the <br> campus navigation</h2>
+            <center>
+                <video src="C:\Users\admin\Documents\Joyoshare VidiKit\Screen Recorder\Converted\REC_20241127104414578.mp4"
+                width="550px" controls autoplay loop></video>
+            </center> <br>
+
+        <button onclick="ForWelcomePage()">Back to Main Page</button>
+        <script src="app.js"></script>
+    </div>
+    </div>
+</body>
+</html>
