@@ -11,7 +11,7 @@ const GuideOverview = () => {
         <div className="step-box">
           <h1>Step 1:</h1>
           <p>Specify your current location and select your destination.</p>
-            <img src="src\images\currentLocationandDestination.PNG" alt="Picture sa currentlocation" />
+            <img src="\assets\currentLocationandDestination.PNG" alt="Picture sa currentlocation" />
         </div>
 
         {/* Step 2 */}

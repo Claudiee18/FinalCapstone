@@ -1,6 +1,6 @@
 import CurrentLocIcon from '../images/CurrentLocIcon.gif'
 import L from 'leaflet';
-import { markersData, routesData } from '../data/mapData';
+import { markersData, routesData } from '../data/mapData.js';
 import 'leaflet/dist/leaflet.css';
 import { useRef, useState, useCallback, useEffect } from 'react';
 import backgroundImage from '../images/FinalMapMap.jpg';  // Add this import at
@@ -95,8 +95,8 @@ function MapView() {
 
 marker.bindPopup(popupContent, {
   closeOnClick: false, // Prevent closing when map is clicked
-  autoClose: false,    // Prevent closing when another popup is opened
-}).openPopup();
+    autoClose: false,    // Prevent closing when another popup is opened
+  }).openPopup();
 
 
 currentPopupMarkerRef.current = marker;
@@ -237,7 +237,7 @@ currentPopupMarkerRef.current = marker;
       if (mapRef.current) {
         mapRef.current.remove();
       }
-    };
+    };  
   }, []);
 
   const handleLocationChange = (e) => {
