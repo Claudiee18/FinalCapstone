@@ -28,8 +28,7 @@ const GuideOverview = () => {
       <div className="video-container">
         <h2>Watch the demonstration of the campus navigation</h2>
         <video controls>
-          <source src="scr\images\DemoVid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <source src="/BuildingImages/DemoVid.mp4" type="video/mp4" />
         </video>
       </div>
 
