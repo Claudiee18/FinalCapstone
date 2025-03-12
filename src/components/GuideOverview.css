@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: stretch;
   gap: 20px;
-  flex-wrap: nowrap; /* Forces items to stay in a row */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
   width: 100%;
   max-width: 1000px;
 }
@@ -43,9 +43,11 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px; /* Fixed width */
+  width: 100%; /* Full width on mobile */
+  max-width: 350px; /* Max width for larger screens */
   text-align: center;
-  flex: 1; /* Makes both boxes take equal space */
+  flex: 1 1 100%; /* Flex grow, shrink, and basis */
+  margin-bottom: 20px; /* Space between stacked boxes */
 }
 
 /* Video section */
@@ -55,8 +57,8 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 80%;
-  max-width: 800px;
+  width: 100%; /* Full width on mobile */
+  max-width: 800px; /* Max width for larger screens */
   margin-top: 30px;
 }
 
@@ -69,7 +71,7 @@
 .btn-primary,
 .btn-secondary {
   display: block;
-  width: 80%;
+  width: 100%; /* Full width on mobile */
   margin: 10px auto;
   padding: 10px;
   border: none;
@@ -97,6 +99,19 @@
   background-color: #172554;
 }
 
+/* Back Button */
+.BackBtn {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .steps-container {
@@ -105,20 +120,16 @@
   }
 
   .step-box {
-    width: 90%;
+    width: 100%; /* Full width on mobile */
+    max-width: 100%; /* Ensure it doesn't exceed the container */
   }
 
   .video-container {
-    width: 90%;
+    width: 100%; /* Full width on mobile */
   }
 
   .btn-primary,
   .btn-secondary {
-    width: 100%;
+    width: 100%; /* Full width on mobile */
   }
-}
-
-.BackBtn{
-  background-color: #2563eb;
-  color: white;
 }
