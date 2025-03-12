@@ -1,45 +1,171 @@
+/* Map Container */
+.map-container {
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  position: relative;
+}
+
+/* Zoom Controls */
+.leaflet-control-zoom {
+  margin: 10px !important; /* Smaller margin for mobile */
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  width: 35px !important; /* Smaller zoom controls for mobile */
+  height: 35px !important;
+  line-height: 35px !important;
+  font-size: 20px !important;
+}
+
+/* Marker Styles */
 .green-icon {
   filter: grayscale(100%) brightness(1.2) sepia(100%) hue-rotate(85deg) saturate(2000%) brightness(1.2);
-  background: transparent;
-  -webkit-filter: grayscale(100%) brightness(1.2) sepia(100%) hue-rotate(85deg) saturate(2000%) brightness(1.2);
-  width: 25px !important;
-  height: 25px !important;
-  margin-left: -12.5px !important;
-  margin-top: -12.5px !important;
-  box-shadow: 0 0 10px rgba(0,255,0,0.5);
+  width: 20px !important; /* Smaller marker for mobile */
+  height: 20px !important;
+  margin-left: -10px !important;
+  margin-top: -10px !important;
 }
 
 .destination-icon {
-  width: 15px !important;
-  height: 15px !important;
-  margin-left: -7.5px !important;
-  margin-top: -7.5px !important;
-  filter: drop-shadow(0 0 5px rgba(255,0,0,0.3));
+  width: 12px !important; /* Smaller destination marker for mobile */
+  height: 12px !important;
+  margin-left: -6px !important;
+  margin-top: -6px !important;
 }
 
+/* Popup Styles */
 .leaflet-popup-content {
   font-family: Arial, sans-serif;
-  font-size: 14px;
-  padding: 8px;
+  font-size: 12px; /* Smaller font size for mobile */
+  padding: 6px;
   color: #333;
 }
+
+/* Hide Scrollbars */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
-
+/* Building Marker Styles */
 .building-marker {
-  border-radius: 8px;
-  border: 2px solid white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border-radius: 6px; /* Slightly smaller border radius for mobile */
+  border: 1px solid white; /* Thinner border for mobile */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Smaller shadow for mobile */
 }
 
 .building-marker img {
-  border-radius: 8px;
+  border-radius: 6px; /* Slightly smaller border radius for mobile */
 }
+
+/* Navigation Panel */
+.navigation-panel {
+  position: fixed; /* Changed to fixed for better mobile handling */
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%); /* Hidden by default */
+}
+
+.navigation-panel.visible {
+  transform: translateX(0); /* Visible when toggled */
+}
+
+/* Toggle Navigation Button */
+.toggle-navigation-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.toggle-navigation-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Search Button */
+.search-button {
+  position: absolute;
+  top: 20px;
+  right: 80px; /* Adjusted to make space for the toggle button */
+  z-index: 1000;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navigation-panel {
+    width: 250px; /* Smaller panel for mobile */
+  }
+
+  .toggle-navigation-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out {
+    width: 30px !important; /* Smaller zoom controls for mobile */
+    height: 30px !important;
+    line-height: 30px !important;
+    font-size: 18px !important;
+  }
+
+  .leaflet-popup-content {
+    font-size: 10px; /* Smaller font size for mobile */
+    padding: 4px;
+  }
+
+  .navigation-panel {
+    width: 250px; /* Smaller panel for mobile */
+  }
+
+  .toggle-navigation-button,
+  .search-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }

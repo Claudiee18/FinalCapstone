@@ -3,6 +3,10 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
 }
 
 .background-image {
@@ -11,30 +15,30 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  opacity: 0.2;
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
   z-index: 2;
   width: 90%;
   max-width: 600px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   font-weight: bold;
 }
 
 p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
@@ -50,8 +54,8 @@ p {
   color: white;
   border: none;
   border-radius: 25px;
-  padding: 15px 30px;
-  font-size: 1.1rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -63,36 +67,10 @@ p {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #007bff;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   p {
@@ -105,40 +83,6 @@ p {
   }
 
   .continue-button {
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
   }
-} 
-
-
-/* Make zoom controls larger */
-.leaflet-control-zoom {
-  margin: 15px !important;
-}
-
-.leaflet-control-zoom-in,
-.leaflet-control-zoom-out {
-  width: 40px !important;
-  height: 40px !important;
-  line-height: 40px !important;
-  font-size: 24px !important;
-  font-weight: bold !important;
-  border-radius: 4px !important;
-}
-
-.leaflet-control-zoom-in {
-  margin-bottom: 5px !important;
-}
-
-.leaflet-control-zoom a {
-  color: #333 !important;
-  background-color: white !important;
-  border: 2px solid rgba(0,0,0,0.2) !important;
-  transition: all 0.3s ease !important;
-}
-
-.leaflet-control-zoom a:hover {
-  background-color: #f4f4f4 !important;
-  color: #000 !important;
-  border-color: rgba(0,0,0,0.3) !important;
 }
